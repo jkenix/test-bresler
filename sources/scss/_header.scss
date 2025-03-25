@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.header {
+  position: relative;
+
+  &__inner {
+    @include row;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: max-content;
+
+    margin: 0 auto;
+  }
+
+  &__menu-item {
+    display: flex;
+  }
+
+  &__menu-link {
+    width: 60px;
+    padding: 19.5px 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.6%;
+    text-align: left;
+
+    &.active {
+      border-bottom: 2px solid $pr-500;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
