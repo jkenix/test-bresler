@@ -15,7 +15,7 @@ html {
 body {
   background-color: $body-bg-color;
 
-  color: $dark;
+  color: $dark-gray;
 
   font-family: $main-font;
   font-weight: normal;
@@ -25,29 +25,22 @@ body {
   margin: 0;
 }
 
-.wrapper {
-  width: 100%;
-
-  margin: 0 auto;
-  padding: 0 16px 0 8px;
-
-  max-width: 100%;
-
-  @media (min-width: $xxxl) {
-    padding: 0;
-  }
-
-  @media (min-width: $xxl) {
-    max-width: 1416px;
-  }
-}
-
 .container {
   box-sizing: border-box;
 
   width: 100%;
 
   margin: 0 auto;
+
+  padding: 0 16px;
+
+  @media (min-width: $xxxl) {
+    &.container-xxxl {
+      max-width: 1416px;
+    }
+    
+    max-width: 1416px;
+  }
 }
 
 .container-fluid {
@@ -67,7 +60,7 @@ h6 {
   margin: 0;
   padding: 0;
   position: relative;
-  color: $dark;
+  color: $dark-gray;
   letter-spacing: normal;
 }
 
@@ -120,7 +113,7 @@ textarea {
   overflow: visible;
 
   &:focus-visible {
-    outline: 1px solid $dark;
+    outline: 1px solid $dark-gray;
   }
 }
 
@@ -132,6 +125,25 @@ select {
 select,
 input {
   outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  box-sizing: border-box;
+
+  &:checked::after {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+
+    content: "\2713";
+    color: $pr-600;
+  }
 }
 
 button,
@@ -159,7 +171,7 @@ a {
 
   font-family: $main-font;
   text-decoration: none;
-  color: $dark;
+  color: $dark-gray;
 
   &:hover {
     color: $pr-600;
@@ -171,7 +183,7 @@ a {
   }
 
   &:focus-visible {
-    outline: 3px solid $dark;
+    outline: 2px solid $dark-gray;
   }
 }
 

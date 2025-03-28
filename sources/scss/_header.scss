@@ -4,8 +4,13 @@
 .header {
   position: relative;
 
-  &__inner {
-    @include row;
+  &__row {
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  &__item {
+    padding: 0;
   }
 
   &__menu {
@@ -16,6 +21,15 @@
     max-width: max-content;
 
     margin: 0 auto;
+
+    @media (max-width: $lg) {
+      margin: 0;
+    }
+  }
+
+  &__menu-list {
+    @include row;
+    flex-wrap: wrap;
   }
 
   &__menu-item {
@@ -23,21 +37,71 @@
   }
 
   &__menu-link {
-    width: 60px;
+    max-width: 96px;
     padding: 19.5px 12px;
 
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: 24px;
-    letter-spacing: -0.6%;
-    text-align: left;
 
     &.active {
       border-bottom: 2px solid $pr-500;
     }
 
+    &:active {
+      border-bottom: 2px solid $link-pressed;
+    }
+
     &:hover {
       text-decoration: none;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    padding: 8px 0px;
+  }
+
+  &__profile-content {
+    @include row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 22px;
+
+    @media (max-width: $sm) {
+      gap: 7px;
+    }
+  }
+
+  &__profile-name {
+    align-items: center;
+    display: flex;
+
+    color: $pr-600;
+
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 24px;
+
+    height: 100%;
+    max-height: 58px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__profile-logout {
+    width: 16px;
+    height: 16px;
+
+    &:hover {
+      svg path {
+        fill: $dark-gray;
+      }
     }
   }
 }

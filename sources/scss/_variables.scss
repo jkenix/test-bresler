@@ -14,9 +14,20 @@ $main-font: "Inter", Arial, sans-serif;
 $body-bg-color: rgb(255, 255, 255);
 
 // Colors
-$dark: rgb(37, 44, 50);
+$dark: rgb(0, 0, 0);
+$dark-gray: rgb(37, 44, 50);
+$dark-gray-3: rgb(48, 57, 64);
+$day-text: rgba(25, 28, 48, 0.9);
 $white: rgb(255, 255, 255);
 
+$mid-gray: rgb(91, 104, 113);
+$mid-gray-4: rgb(154, 166, 172);
+$mid-gray-3: rgb(132, 145, 154);
+
+$light-gray-5: rgb(246, 248, 249);
+
+$pr-050: rgb(246, 252, 255);
+$pr-200: rgb(215, 237, 255);
 $pr-500: rgb(64, 148, 247);
 $pr-600: rgb(14, 115, 246);
 
@@ -24,8 +35,9 @@ $pr-600: rgb(14, 115, 246);
 $link-pressed: rgb(224, 224, 224);
 
 // Box shadows
-$border-rad-btn: 5px;
-$border-rad-card: 10px;
-$border-rad-card__pay: 0px 0px 10px 10px;
+$border-rad-services-content: 6px;
+$border-rad-services: 4px;
+$border-rad-status: 2px;
+$border-rad-scroll: 2px;
 
 // Gradient

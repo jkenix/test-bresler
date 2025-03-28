@@ -1,9 +1,9 @@
 // Global
-@forward "fonts";
 @forward "global";
 
 // Blocks
 @forward "header";
+@forward "./services/services";
 
 // Elements
 @forward "btn";

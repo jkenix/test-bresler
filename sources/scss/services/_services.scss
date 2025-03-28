@@ -1,0 +1,256 @@
+@use "../_variables" as *;
+@use "../_mixins" as *;
+// Blocks
+@forward "options";
+@forward "content";
+
+// Global
+.services {
+  &-top {
+    @include row;
+    align-items: center;
+
+    position: relative;
+
+    @media (max-width: $sm) {
+      @include column;
+    }
+  }
+
+  &__container {
+    background-color: $pr-050;
+
+    padding: 0;
+  }
+
+  &__offer {
+    padding: 18px 0 14px 0;
+
+    @media (max-width: $sm) {
+      padding: 14px 0 14px 0;
+      gap: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 24px;
+    margin-right: 24px;
+
+    @media (max-width: $sm) {
+      margin-right: 0;
+    }
+  }
+
+  &-periods {
+    position: relative;
+  }
+
+  &__row {
+    margin: 0;
+    justify-content: space-between;
+
+    @media (max-width: $xxxl) {
+      div[class^="col"] {
+        padding: 0;
+      }
+    }
+
+    @media (min-width: $xxxl) {
+      max-width: 1410px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+
+  }
+
+  &__col {
+    display: flex;
+  }
+
+  // Date
+  &__date-period {
+    color: $dark;
+
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+
+    white-space: nowrap;
+
+    margin-right: 8px;
+  }
+
+  &__date-text {
+    position: absolute;
+    border: none;
+    background: none;
+
+    padding: 0;
+    width: 100%;
+    max-width: inherit;
+
+    pointer-events: none;
+  }
+
+  &__date-select {
+    min-width: 159px;
+
+    margin-right: auto;
+
+    // End date
+    &--end {
+      &[type="date"] {
+        opacity: 0;
+      }
+    }
+
+    &--is-visible {
+      &[type="date"] {
+        opacity: 1;
+        z-index: 5;
+      }
+    }
+
+    // Show close button
+    &:focus {
+      & + .services__date-close {
+        display: block;
+      }
+    }
+
+    @media (max-width: $lg) {
+      min-width: auto;
+    }
+  }
+
+  &__date-close {
+    display: none;
+    position: absolute;
+
+    right: 30px;
+
+    width: 24px;
+    height: 24px;
+
+    z-index: 5;
+  }
+
+  // Calendar
+  &__calendar-picker {
+    background: $white;
+
+    display: flex;
+    position: absolute;
+
+    right: 6px;
+    top: 3px;
+
+    width: 24px;
+    height: 24px;
+
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  // Search
+  &__search-select {
+    max-width: 214px;
+
+    &:focus {
+      & + .services__date-close {
+        display: block;
+      }
+    }
+  }
+
+  // Reset
+  &__reset {
+    white-space: nowrap;
+  }
+
+  // Show rides
+  &__show-rides-col {
+    margin-top: 8px;
+  }
+
+  &__show-rides {
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 16px;
+
+    cursor: pointer;
+
+    @media (max-width: $xl) {
+      max-width: 116px;
+    }
+
+    &:hover {
+      color: $pr-600;
+    }
+
+    &:active {
+      color: $link-pressed;
+    }
+
+    @media (max-width: $md) {
+      font-size: 0.85rem;
+      max-width: 100%;
+    }
+  }
+
+  &__show-rides-checkbox {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    border: 2px solid rgb(222, 226, 230);
+    border-radius: 4px;
+    background: $white;
+
+    width: 16px;
+    height: 16px;
+
+    @media (max-width: $lg) and (min-width: $md) {
+      display: none;
+    }
+  }
+
+  // Status bar
+  &__status {
+    background-color: $pr-200;
+    border-radius: $border-rad-status;
+
+    padding: 0;
+
+    height: 2px;
+  }
+
+  &__bar {
+    border-radius: 2px 0px 0px 2px;
+    background: $pr-500;
+
+    width: 100%;
+    max-width: 360px;
+    height: 2px;
+  }
+
+  // Rides
+  &__rides {
+    padding: 15px 16px 0 8px;
+
+    gap: 8px;
+  }
+
+  &__scroll {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: $border-rad-scroll;
+    background: rgba(26, 32, 36, 0.2);
+
+    width: 4px;
+    height: 84px;
+  }
+}

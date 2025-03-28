@@ -1,0 +1,231 @@
+@use "../_variables" as *;
+@use "../_mixins" as *;
+
+.services-content {
+  @include column;
+
+  background-color: $pr-050;
+
+  &__field {
+    border-radius: $border-rad-services-content;
+    background: $white;
+
+    padding: 16px;
+  }
+
+  &__row {
+    margin: 0;
+    justify-content: space-between;
+
+    div[class^="col"] {
+      padding: 0;
+    }
+
+    @media (min-width: $xxxl) {
+      max-width: 1416px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__col {
+    @include column;
+    gap: 8px;
+
+    position: relative;
+
+    @media (max-width: $xxxl) and (min-width: $xxl) {
+      &--docs {
+        max-width: 96px;
+      }
+
+      &--num {
+        max-width: 68px;
+        margin-right: 28px;
+      }
+
+      &--date {
+        max-width: 176px;
+        margin-right: 28px;
+      }
+
+      &--sum {
+        max-width: 86px;
+        margin-right: 28px;
+      }
+
+      &--city {
+        max-width: 639px;
+      }
+
+      &--docs {
+        max-width: 96px;
+      }
+    }
+
+    &--date {
+      @media (max-width: $xl) and (min-width: $lg) {
+        width: 19%;
+      }
+    }
+
+    &--sum {
+      @media (min-width: $xxxl) {
+        align-items: center;
+      }
+
+      @media (max-width: $xxxl) {
+        align-items: end;
+      }
+
+      @media (max-width: $xl) {
+        margin-right: 10px;
+      }
+    }
+
+    &--city {
+      @media (max-width: $xl) and (min-width: $lg) {
+        width: 40%;
+      }
+    }
+
+    &--docs {
+      justify-content: center;
+
+      margin-left: auto;
+
+      @media (max-width: $xxl) {
+        margin-left: 0;
+      }
+
+      @media (min-width: $lg) {
+        align-items: center;
+      }
+    }
+  }
+
+  &__placeholder {
+    color: $mid-gray-3;
+
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 16px;
+  }
+
+  // Fields
+  &__number {
+    color: $pr-600;
+  }
+
+  &__date {
+    color: $dark-gray;
+  }
+
+  &__sum {
+    color: $day-text;
+  }
+
+  &__city {
+    align-items: center;
+    display: flex;
+
+    color: $dark-gray;
+  }
+
+  &__city-txt {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    width: 100%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media (min-width: $lg) {
+      max-width: 582px;
+    }
+  }
+
+  &__docs {
+    border-radius: 10px;
+    background: rgb(238, 240, 242);
+
+    color: $mid-gray;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+
+    padding: 4px 8px;
+
+    max-width: 68px;
+  }
+
+  &__date,
+  &__sum,
+  &__number {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  // Info
+  &__info {
+    display: flex;
+    position: relative;
+
+    &-txt {
+      display: none;
+
+      border-radius: 4px;
+      background: $dark-gray-3;
+      bottom: 30px;
+
+      color: $light-gray-5;
+
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+
+      position: absolute;
+      width: 203px;
+      left: 11px;
+      padding: 4px 8px;
+
+      @media (max-width: $xxl) {
+        right: 0;
+        left: auto;
+      }
+    }
+
+    &-icon {
+      cursor: pointer;
+
+      margin-left: 12px;
+
+      &:hover {
+        & + .services-content__info-txt,
+        & + .services-content__info-txt + .services-content__info-arrow {
+          display: flex;
+        }
+      }
+    }
+
+    &-arrow {
+      display: none;
+
+      position: absolute;
+      width: 10px;
+      height: 6px;
+      left: 21px;
+      top: -15px;
+
+      @media (max-width: $xxl) {
+        left: 12px;
+        top: -15px;
+      }
+    }
+  }
+}

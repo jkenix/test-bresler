@@ -6,21 +6,100 @@
   align-items: center;
   justify-content: center;
 
-  box-sizing: border-box;
+  background: transparent;
   border: none;
+  outline: none;
 
+  box-sizing: border-box;
   position: relative;
 
-  overflow: auto;
-  word-break: break-all;
+  padding: 0 8px;
 
-  padding: 5px;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
     text-decoration: none;
   }
 
   &:focus-visible {
-    outline: 1px solid white;
+    outline: 2px solid $dark-gray;
+  }
+
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  &__default {
+    max-width: 178px;
+    min-height: 24px;
+
+    @media (max-width: $lg) {
+      min-height: 32px;
+    }
+  }
+
+  &__services-offer {
+    border-radius: $border-rad-services;
+    background-color: $pr-500;
+
+    color: $white;
+
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 24px;
+
+    &:hover {
+      background-color: $dark-gray;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $link-pressed;
+      color: $dark-gray;
+
+      svg path {
+        fill: $dark-gray;
+      }
+    }
+  }
+
+  &__search {
+    padding: 0;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  &__reset {
+    padding: 0;
+
+    gap: 4px;
+
+    color: $pr-500;
+
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 16px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:active {
+      span {
+        color: $link-pressed;
+      }
+    }
+
+    &:hover {
+      color: $dark;
+
+      svg path {
+        fill: $dark;
+      }
+    }
   }
 }
